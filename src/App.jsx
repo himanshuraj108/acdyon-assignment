@@ -5,6 +5,7 @@ import Features from './components/sections/Features'
 import DashboardPreview from './components/sections/DashboardPreview'
 import HowItWorks from './components/sections/HowItWorks'
 import Programs from './components/sections/Programs'
+import FAQ from './components/sections/FAQ'
 import CTASection from './components/sections/CTASection'
 import EasterEgg from './components/ui/EasterEgg'
 
@@ -18,6 +19,7 @@ export default function App() {
         <DashboardPreview />
         <HowItWorks />
         <Programs />
+        <FAQ />
         <CTASection />
       </main>
       <Footer />
