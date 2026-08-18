@@ -10,7 +10,7 @@ import EasterEgg from './components/ui/EasterEgg'
 
 export default function App() {
   return (
-    <div className="min-h-screen font-body bg-white text-gray-900">
+    <div className="min-h-screen font-body bg-white dark:bg-gray-950 text-gray-900 dark:text-white">
       <Navbar />
       <main>
         <Hero />

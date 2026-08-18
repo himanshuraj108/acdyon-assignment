@@ -16,6 +16,12 @@
     color: #111827;
   }
 
+  html.dark body,
+  .dark body {
+    background-color: #09090b;
+    color: #f9fafb;
+  }
+
   h1,
   h2,
   h3,
@@ -44,9 +50,29 @@
       radial-gradient(at 85% 75%, rgba(124, 58, 237, 0.06) 0px, transparent 55%);
   }
 
+  html.dark .bg-mesh,
+  .dark .bg-mesh {
+    background-image: radial-gradient(at 15% 25%, rgba(99, 102, 241, 0.12) 0px, transparent 55%),
+      radial-gradient(at 85% 75%, rgba(124, 58, 237, 0.08) 0px, transparent 55%);
+  }
+
   .section-divider {
     border-top: 1px solid #f3f4f6;
   }
+
+  html.dark .section-divider,
+  .dark .section-divider {
+    border-top-color: rgb(31 41 55);
+  }
+}
+
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition-property: background-color, color, border-color, box-shadow, fill, stroke, opacity !important;
+  transition-duration: 380ms !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 @keyframes typingBounce {
@@ -70,12 +96,6 @@
 }
 .typing-dot-3 {
   animation: typingBounce 1.3s ease-in-out infinite 300ms;
-}
-
-@keyframes progressFill {
-  from {
-    width: 0%;
-  }
 }
 
 .scrollbar-hide {
