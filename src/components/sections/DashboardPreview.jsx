@@ -1,0 +1,283 @@
+import { motion, useInView, useAnimation } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { Check, ChevronRight, Lock, Play, MessageSquare, BarChart3, BookOpen } from 'lucide-react'
+
+const sidebarItems = ['Dashboard', 'My Courses', 'Mentors', 'Projects', 'Analytics', 'Settings']
+
+const modules = [
+  { name: 'Python Foundations', done: true },
+  { name: 'Data Structures', done: true },
+  { name: 'Machine Learning Core', done: true },
+  { name: 'Neural Networks', current: true },
+  { name: 'Production Systems', locked: true },
+  { name: 'Capstone Project', locked: true },
+]
+
+const chatMessages = [
+  { from: 'ai', text: 'Your last quiz score puts you in the top 12% of this cohort. Ready to level up?' },
+  { from: 'user', text: 'Yes — what should I focus on first in neural networks?' },
+  { from: 'ai', text: 'Start with the math behind backpropagation. I have a 20-minute explainer built for your learning style.' },
+]
+
+function ModuleRow({ mod, barControls }) {
+  return (
+    <div
+      className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-[11px] ${
+        mod.current
+          ? 'bg-brand-50 border border-brand-100'
+          : mod.locked
+          ? 'opacity-40'
+          : ''
+      }`}
+    >
+      <div className="flex items-center gap-2.5">
+        <div
+          className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${
+            mod.done
+              ? 'bg-emerald-100 text-emerald-600'
+              : mod.current
+              ? 'bg-brand-100 text-brand-600'
+              : 'bg-gray-100 text-gray-300'
+          }`}
+        >
+          {mod.done && <Check size={8} strokeWidth={3} />}
+          {mod.current && <ChevronRight size={8} strokeWidth={3} />}
+          {mod.locked && <Lock size={7} strokeWidth={2.5} />}
+        </div>
+        <span
+          className={`font-medium ${
+            mod.current ? 'text-brand-700' : mod.done ? 'text-gray-600' : 'text-gray-400'
+          }`}
+        >
+          {mod.name}
+        </span>
+      </div>
+      {mod.current && (
+        <span className="text-[9px] font-semibold text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded-full border border-brand-100">
+          In Progress
+        </span>
+      )}
+      {mod.done && (
+        <span className="text-[9px] font-medium text-emerald-600">
+          Done
+        </span>
+      )}
+    </div>
+  )
+}
+
+function ChatMessage({ msg, index }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.4 + index * 0.15, duration: 0.4 }}
+      className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}
+    >
+      <div
+        className={`max-w-[85%] px-3 py-2 rounded-2xl text-[11px] leading-relaxed ${
+          msg.from === 'ai'
+            ? 'bg-brand-50 text-brand-900 rounded-tl-sm'
+            : 'bg-gray-900 text-white rounded-tr-sm'
+        }`}
+      >
+        {msg.text}
+      </div>
+    </motion.div>
+  )
+}
+
+export default function DashboardPreview() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const barControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      barControls.start({
+        width: '72%',
+        transition: { duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3 },
+      })
+    }
+  }, [isInView, barControls])
+
+  return (
+    <section className="py-24 lg:py-32 bg-white section-divider" id="platform-preview">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-[13px] font-semibold text-brand-600 uppercase tracking-widest mb-3"
+            >
+              The Platform
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: 0.06 }}
+              className="font-heading font-black text-[38px] sm:text-[44px] text-gray-900 leading-tight mb-5"
+            >
+              A learning environment
+              <br />built for{' '}
+              <span className="text-gradient">deep focus.</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="text-[16px] text-gray-500 leading-relaxed mb-8"
+            >
+              No distractions. No bloated course catalogues. AcdyOn surfaces exactly
+              what you need next, gives you an AI mentor who knows where you are,
+              and tracks your progress against the outcomes that matter.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="space-y-4"
+            >
+              {[
+                { icon: BarChart3, label: 'Live progress tracking across every module' },
+                { icon: MessageSquare, label: 'AI mentor available at every step, not just office hours' },
+                { icon: BookOpen, label: 'Curriculum that adjusts based on what you actually understand' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0">
+                    <Icon size={15} className="text-brand-600" />
+                  </div>
+                  <span className="text-[14.5px] text-gray-600 font-medium">{label}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: 20, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative"
+          >
+            <div className="rounded-2xl overflow-hidden shadow-mockup border border-gray-200/80 bg-white select-none">
+              <div className="flex items-center gap-3 px-4 py-3 bg-gray-50 border-b border-gray-200">
+                <div className="flex gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-red-400" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                </div>
+                <div className="flex-1">
+                  <div className="bg-white rounded-md px-3 py-1 flex items-center gap-2 border border-gray-200 max-w-[220px]">
+                    <div className="w-2.5 h-2.5 rounded-full border border-gray-300" />
+                    <span className="text-[11px] text-gray-500 font-mono">app.acdyon.com/courses</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid" style={{ gridTemplateColumns: '130px 1fr 180px' }}>
+                <div className="bg-gray-50/80 border-r border-gray-200 p-3.5">
+                  <div className="flex items-center gap-1.5 mb-5">
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-brand-600 to-violet-700 flex items-center justify-center">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M2.5 9.5L6 2.5L9.5 9.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M3.8 7.2H8.2" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                    <span className="text-[12px] font-bold text-gray-800">Acdyon</span>
+                  </div>
+                  {sidebarItems.map((item, i) => (
+                    <div
+                      key={item}
+                      className={`px-2.5 py-2 rounded-lg text-[11px] mb-0.5 cursor-pointer transition-colors ${
+                        i === 1
+                          ? 'bg-brand-50 text-brand-700 font-semibold'
+                          : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-4">
+                  <div className="text-[12px] font-bold text-gray-800 mb-0.5">
+                    ML Engineering
+                  </div>
+                  <div className="text-[10px] text-gray-500 mb-3">
+                    6 modules · 48 lessons · 3 projects
+                  </div>
+
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[10px] text-gray-500">Overall Progress</span>
+                    <span className="text-[10px] font-bold text-brand-600">72%</span>
+                  </div>
+                  <div className="h-1.5 bg-gray-100 rounded-full mb-4 overflow-hidden">
+                    <motion.div
+                      className="h-full rounded-full bg-gradient-to-r from-brand-500 to-violet-500"
+                      initial={{ width: '0%' }}
+                      animate={barControls}
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    {modules.map((mod) => (
+                      <ModuleRow key={mod.name} mod={mod} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-l border-gray-200 flex flex-col">
+                  <div className="px-3.5 py-3 border-b border-gray-100 flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    <span className="text-[11px] font-semibold text-gray-700">AI Mentor</span>
+                  </div>
+                  <div className="flex-1 p-3 space-y-2.5 overflow-hidden">
+                    {chatMessages.map((msg, i) => (
+                      <ChatMessage key={i} msg={msg} index={i} />
+                    ))}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.9 }}
+                      className="flex justify-start"
+                    >
+                      <div className="bg-brand-50 rounded-2xl rounded-tl-sm px-3 py-2 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-1 inline-block" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-2 inline-block" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-3 inline-block" />
+                      </div>
+                    </motion.div>
+                  </div>
+                  <div className="px-3 py-2.5 border-t border-gray-100">
+                    <div className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+                      <span className="text-[10px] text-gray-400 flex-1">Ask your mentor...</span>
+                      <div className="w-5 h-5 rounded-lg bg-brand-600 flex items-center justify-center flex-shrink-0">
+                        <ChevronRight size={10} className="text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="absolute -bottom-5 -left-5 -z-10 w-full h-full rounded-2xl"
+              style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(124,58,237,0.04))' }}
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
