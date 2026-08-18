@@ -21,7 +21,7 @@ export default function CTASection() {
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-brand-950 relative overflow-hidden" id="cta">
+    <section className="py-24 lg:py-32 bg-brand-950 dark:bg-gray-950 relative overflow-hidden section-divider" id="cta">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -85,7 +85,7 @@ export default function CTASection() {
           transition={{ duration: 0.55, delay: 0.22 }}
         >
           {submitted ? (
-            <div className="inline-flex items-center gap-3 bg-brand-800/50 border border-brand-700 rounded-2xl px-6 py-4">
+            <div className="inline-flex items-center gap-3 bg-brand-800/50 dark:bg-brand-900/30 border border-brand-700 dark:border-brand-800 rounded-2xl px-6 py-4">
               <CheckCircle size={20} className="text-emerald-400" />
               <div className="text-left">
                 <div className="text-white font-semibold text-[15px]">
@@ -107,11 +107,11 @@ export default function CTASection() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your work or personal email"
                 required
-                className="flex-1 px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-gray-500 text-[14px] focus:outline-none focus:border-brand-400 focus:bg-white/15 transition-all"
+                className="flex-1 px-4 py-3.5 rounded-xl bg-white/10 dark:bg-white/5 border border-white/15 dark:border-white/10 text-white placeholder-gray-500 text-[14px] focus:outline-none focus:border-brand-400 focus:bg-white/15 transition-all"
               />
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-brand-700 font-semibold text-[14px] hover:bg-gray-100 transition-colors flex-shrink-0"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-brand-600 text-brand-700 dark:text-white font-semibold text-[14px] hover:bg-gray-100 dark:hover:bg-brand-700 transition-colors flex-shrink-0"
               >
                 Join the Waitlist
                 <ArrowRight size={15} />
