@@ -29,7 +29,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100">
+    <footer className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-20">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-14">
           <div className="col-span-2">
@@ -46,11 +46,11 @@ export default function Footer() {
                   <path d="M5.5 10H11.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
-              <span className="font-heading font-bold text-gray-900 text-[17px] tracking-tight">
+              <span className="font-heading font-bold text-gray-900 dark:text-white text-[17px] tracking-tight">
                 Acdyon
               </span>
             </a>
-            <p className="text-[14px] text-gray-500 leading-relaxed max-w-[260px] mb-6">
+            <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[260px] mb-6">
               A next-generation learning ecosystem for people who want to build
               extraordinary careers.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-150"
+                  className="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all duration-150"
                 >
                   <Icon size={15} />
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="font-heading font-semibold text-[13px] text-gray-900 uppercase tracking-wider mb-4">
+              <h4 className="font-heading font-semibold text-[13px] text-gray-900 dark:text-white uppercase tracking-wider mb-4">
                 {heading}
               </h4>
               <ul className="space-y-2.5">
@@ -78,7 +78,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[14px] text-gray-500 hover:text-gray-800 transition-colors"
+                      className="text-[14px] text-gray-500 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
                     >
                       {link.label}
                     </a>
@@ -89,15 +89,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 pt-7 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-gray-400">
+        <div className="mt-14 pt-7 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[13px] text-gray-400 dark:text-gray-600">
             &copy; {new Date().getFullYear()} Acdyon Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-[13px] text-gray-400 hover:text-gray-600 transition-colors">
+            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-[13px] text-gray-400 hover:text-gray-600 transition-colors">
+            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
               Terms of Service
             </a>
           </div>
