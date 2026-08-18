@@ -27,7 +27,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 lg:py-32 bg-gray-50/60 dark:bg-gray-900 section-divider" id="mentors">
+    <section className="py-24 lg:py-32 bg-gray-50/60 dark:bg-gray-900 section-divider font-outfit" id="mentors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.p
@@ -35,7 +35,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-[13px] font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-3"
+            className="text-[13px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3"
           >
             How It Works
           </motion.p>
@@ -44,7 +44,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.06 }}
-            className="font-heading font-black text-[38px] sm:text-[44px] text-gray-900 dark:text-white leading-tight mb-4"
+            className="font-heading font-semibold text-[38px] sm:text-[44px] text-gray-900 dark:text-white leading-tight mb-4 tracking-tight"
           >
             Three steps to the career
             <br /> you are building toward.
@@ -54,7 +54,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.12 }}
-            className="text-[16px] text-gray-500 dark:text-gray-400 leading-relaxed"
+            className="text-[16px] text-gray-500 dark:text-gray-400 leading-relaxed font-normal"
           >
             A simple structure, an ambitious outcome. AcdyOn is designed to get
             you from where you are to where you want to be — without the noise.
@@ -91,17 +91,17 @@ export default function HowItWorks() {
                 >
                   <div className="relative mb-6">
                     <div className="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-card flex items-center justify-center">
-                      <Icon size={22} className="text-brand-600 dark:text-brand-400" strokeWidth={1.75} />
+                      <Icon size={22} className="text-blue-600 dark:text-blue-400" strokeWidth={1.75} />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center">
-                      <span className="font-heading font-black text-[9px] text-white">{step.number}</span>
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shadow-xs">
+                      <span className="font-heading font-bold text-[9px] text-white">{step.number}</span>
                     </div>
                   </div>
 
-                  <h3 className="font-heading font-bold text-[20px] text-gray-900 dark:text-white mb-3 leading-snug">
+                  <h3 className="font-heading font-semibold text-[19px] text-gray-900 dark:text-white mb-2.5 leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-[14.5px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-sm">
+                  <p className="text-[14.5px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-sm font-normal">
                     {step.description}
                   </p>
                 </motion.div>

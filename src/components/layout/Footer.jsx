@@ -29,28 +29,28 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
+    <footer className="bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800 font-outfit">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 lg:py-20">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-14">
           <div className="col-span-2">
             <a href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-brand-600 to-violet-700 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
                   <path
                     d="M3.5 13.5L8.5 3.5L13.5 13.5"
                     stroke="white"
-                    strokeWidth="2"
+                    strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <path d="M5.5 10H11.5" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M5.5 10H11.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
                 </svg>
               </div>
-              <span className="font-heading font-bold text-gray-900 dark:text-white text-[17px] tracking-tight">
-                Acdyon
+              <span className="font-heading font-extrabold text-gray-900 dark:text-white text-[18px] tracking-tight">
+                AcdyOn
               </span>
             </a>
-            <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[260px] mb-6">
+            <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed max-w-[260px] mb-6 font-normal">
               A next-generation learning ecosystem for people who want to build
               extraordinary careers.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all duration-150"
+                  className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-150"
                 >
                   <Icon size={15} />
                 </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[14px] text-gray-500 dark:text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
+                      className="text-[14px] text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-normal"
                     >
                       {link.label}
                     </a>
@@ -89,15 +89,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 pt-7 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-gray-400 dark:text-gray-600">
-            &copy; {new Date().getFullYear()} Acdyon Technologies. All rights reserved.
+        <div className="mt-14 pt-7 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 font-normal">
+          <p className="text-[13px] text-gray-400 dark:text-gray-500">
+            &copy; {new Date().getFullYear()} AcdyOn Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
+            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-600 hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
+            <a href="#" className="text-[13px] text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
               Terms of Service
             </a>
           </div>
