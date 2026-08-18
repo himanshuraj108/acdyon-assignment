@@ -1,11 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="url(#grad)"/>
-  <path d="M7 24L16 8L25 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10.5 18.5H21.5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="9" fill="#090d1a"/>
+  <!-- Sleek Geometric Delta Brand Mark -->
+  <path d="M16 6.5L7 24H11.5L16 14.5L20.5 24H25L16 6.5Z" fill="url(#brandGrad)" />
+  <path d="M12 20.5H20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="11" r="1.5" fill="#60a5fa"/>
   <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4f46e5"/>
-      <stop offset="1" stop-color="#7c3aed"/>
+    <linearGradient id="brandGrad" x1="7" y1="6.5" x2="25" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="0.5" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#4f46e5"/>
     </linearGradient>
   </defs>
 </svg>

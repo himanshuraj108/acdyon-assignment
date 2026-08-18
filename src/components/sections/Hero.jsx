@@ -72,14 +72,22 @@ function DashboardMockup() {
       </div>
 
       {/* Grid: 1 col on mobile, 2 col on sm, 3 col on md+ */}
-      <div className="grid grid-cols-1 sm:grid-cols-[105px_1fr] md:grid-cols-[105px_1fr_125px] min-h-[280px]">
-        {/* Left Sidebar (hidden on extra small, visible sm+) */}
+      <div className="grid grid-cols-1 sm:grid-cols-[115px_1fr] md:grid-cols-[115px_1fr_125px] min-h-[280px]">
+        {/* Left Sidebar */}
         <div className="hidden sm:block bg-gray-50/70 dark:bg-gray-900/60 border-r border-gray-200/80 dark:border-gray-800 p-2.5">
           <div className="flex items-center gap-1.5 mb-3.5">
-            <div className="w-5 h-5 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <path d="M2 8L5 2L8 8" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M3.2 6H6.8" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
+            <div className="w-5 h-5 rounded-md bg-[#090d1a] border border-gray-800/80 flex items-center justify-center flex-shrink-0">
+              <svg width="11" height="11" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 6L7 24H11.5L16 14.5L20.5 24H25L16 6Z" fill="url(#heroBrandGrad)" />
+                <path d="M12 20.5H20" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+                <circle cx="16" cy="10.5" r="1.5" fill="#60a5fa" />
+                <defs>
+                  <linearGradient id="heroBrandGrad" x1="7" y1="6" x2="25" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#60a5fa" />
+                    <stop offset="0.5" stopColor="#3b82f6" />
+                    <stop offset="1" stopColor="#6366f1" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
             <span className="text-[11px] font-bold text-gray-800 dark:text-gray-200 font-outfit">AcdyOn</span>
@@ -137,7 +145,7 @@ function DashboardMockup() {
           </div>
         </div>
 
-        {/* Right AI Mentor Panel (visible md+) */}
+        {/* Right AI Mentor Panel */}
         <div className="hidden md:flex border-l border-gray-200/80 dark:border-gray-800 p-3 flex-col gap-2 bg-gray-50/50 dark:bg-gray-900/50 font-outfit">
           <div className="flex items-center gap-1.5 mb-1">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-dot" />
@@ -189,13 +197,39 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Main Headline in Poppins (not bold) */}
+            {/* Main Headline in Poppins (not bold) with Curvy Signature Underline */}
             <motion.h1
               {...fadeUp(0.08)}
-              className="font-poppins font-normal text-[32px] sm:text-[44px] md:text-[52px] lg:text-[58px] xl:text-[64px] leading-[1.12] tracking-tight text-gray-900 dark:text-white mb-5 sm:mb-6"
+              className="font-poppins font-normal text-[32px] sm:text-[44px] md:text-[52px] lg:text-[58px] xl:text-[64px] leading-[1.15] tracking-tight text-gray-900 dark:text-white mb-6 sm:mb-7"
             >
               The Platform for{' '}
-              <span className="text-gradient font-medium">Extraordinary</span>
+              <span className="relative inline-block text-gradient font-medium pb-1">
+                Extraordinary
+                {/* Curvy Signature Stroke SVG */}
+                <svg
+                  className="absolute -bottom-1.5 sm:-bottom-2.5 left-0 w-full overflow-visible pointer-events-none"
+                  viewBox="0 0 280 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <motion.path
+                    d="M 3 13 C 55 4, 140 18, 276 7 C 220 16, 110 18, 18 15"
+                    stroke="url(#signatureGrad)"
+                    strokeWidth="3.2"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 1.1, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  />
+                  <defs>
+                    <linearGradient id="signatureGrad" x1="0" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#2563eb" />
+                      <stop offset="0.5" stopColor="#6366f1" />
+                      <stop offset="1" stopColor="#a855f7" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
               <br className="hidden sm:inline" /> Careers.
             </motion.h1>
 

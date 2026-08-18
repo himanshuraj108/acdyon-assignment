@@ -160,16 +160,26 @@ const resourceItems = [
 
 function Logo() {
   return (
-    <a href="/" className="flex items-center gap-2.5 group">
-      <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-sm">
-        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.5 13.5L8.5 3.5L13.5 13.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M5.5 10H11.5" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+    <a href="/" className="flex items-center gap-2.5 group select-none">
+      <div className="w-9 h-9 rounded-xl bg-[#090d1a] border border-gray-800/80 flex items-center justify-center shadow-sm group-hover:border-blue-500/50 transition-colors">
+        <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 6L7 24H11.5L16 14.5L20.5 24H25L16 6Z" fill="url(#navBrandGrad)" />
+          <path d="M12 20.5H20" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+          <circle cx="16" cy="10.5" r="1.5" fill="#60a5fa" />
+          <defs>
+            <linearGradient id="navBrandGrad" x1="7" y1="6" x2="25" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#60a5fa" />
+              <stop offset="0.5" stopColor="#3b82f6" />
+              <stop offset="1" stopColor="#6366f1" />
+            </linearGradient>
+          </defs>
         </svg>
       </div>
-      <span className="font-heading font-extrabold text-gray-900 dark:text-white text-[19px] tracking-tight">
-        AcdyOn
-      </span>
+      <div className="flex items-baseline">
+        <span className="font-heading font-extrabold text-gray-900 dark:text-white text-[19px] tracking-tight">
+          Acdy<span className="text-blue-600 dark:text-blue-400">On</span>
+        </span>
+      </div>
     </a>
   )
 }
@@ -240,7 +250,7 @@ export default function Navbar() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex items-center justify-between h-[72px]">
             <Logo />
 
@@ -281,7 +291,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: 8, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                      transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="absolute top-[calc(100%+6px)] left-0 w-[380px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 dark:border-gray-800 bg-white dark:bg-gray-900 z-[100]"
                     >
                       <div className="bg-[#090d1a] dark:bg-[#070913] p-5 border-b border-gray-800/80">
@@ -307,7 +317,7 @@ export default function Navbar() {
                             <div className="font-heading font-bold text-[14.5px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {item.title}
                             </div>
-                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5">
+                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5 font-normal">
                               {item.description}
                             </div>
                           </a>
@@ -347,7 +357,7 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: 8, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                      transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="absolute top-[calc(100%+6px)] left-[-100px] w-[580px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200/90 dark:border-gray-800 bg-white dark:bg-gray-900 z-[100]"
                     >
                       <div className="bg-[#090d1a] dark:bg-[#070913] p-5 border-b border-gray-800/80">
@@ -395,7 +405,7 @@ export default function Navbar() {
                               <div className="font-heading font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                 {item.title}
                               </div>
-                              <div className="text-[12px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5">
+                              <div className="text-[12px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5 font-normal">
                                 {item.description}
                               </div>
                             </a>
@@ -462,7 +472,7 @@ export default function Navbar() {
                             <div className="font-heading font-bold text-[14.5px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {item.title}
                             </div>
-                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5">
+                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5 font-normal">
                               {item.description}
                             </div>
                           </a>
@@ -528,7 +538,7 @@ export default function Navbar() {
                             <div className="font-heading font-bold text-[14.5px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {item.title}
                             </div>
-                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5">
+                            <div className="text-[12.5px] text-gray-500 dark:text-gray-400 leading-relaxed mt-0.5 font-normal">
                               {item.description}
                             </div>
                           </a>
