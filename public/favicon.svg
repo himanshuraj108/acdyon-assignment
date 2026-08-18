@@ -1,14 +1,18 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="9" fill="#090d1a"/>
-  <!-- Sleek Geometric Delta Brand Mark -->
-  <path d="M16 6.5L7 24H11.5L16 14.5L20.5 24H25L16 6.5Z" fill="url(#brandGrad)" />
-  <path d="M12 20.5H20" stroke="white" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="16" cy="11" r="1.5" fill="#60a5fa"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark Badge Container -->
+  <rect width="64" height="64" rx="18" fill="#090d1a"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="17.5" stroke="#1e293b"/>
+  
+  <!-- AcdyOn Brand Delta Glyph -->
+  <path d="M32 12L14 48H23L32 29L41 48H50L32 12Z" fill="url(#favBrandGrad)"/>
+  <path d="M24 41H40" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round"/>
+  <circle cx="32" cy="21" r="3" fill="#60a5fa"/>
+  
   <defs>
-    <linearGradient id="brandGrad" x1="7" y1="6.5" x2="25" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3b82f6"/>
-      <stop offset="0.5" stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#4f46e5"/>
+    <linearGradient id="favBrandGrad" x1="14" y1="12" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="0.5" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#6366f1"/>
     </linearGradient>
   </defs>
 </svg>
