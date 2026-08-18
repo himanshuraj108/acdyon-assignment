@@ -34,21 +34,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-14">
           <div className="sm:col-span-2">
             <a href="/" className="flex items-center gap-2.5 mb-4 group select-none">
-              <div className="w-9 h-9 rounded-xl bg-[#090d1a] border border-gray-800/80 flex items-center justify-center shadow-sm group-hover:border-blue-500/50 transition-colors">
-                <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 6L7 24H11.5L16 14.5L20.5 24H25L16 6Z" fill="url(#footerBrandGrad)" />
-                  <path d="M12 20.5H20" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
-                  <circle cx="16" cy="10.5" r="1.5" fill="#60a5fa" />
+              <div className="w-[38px] h-[38px] rounded-xl bg-[#090d1a] border border-gray-800 flex items-center justify-center shadow-sm group-hover:border-blue-500/50 transition-colors">
+                <svg width="25" height="25" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 4L4 27H10.2L16 15.5L21.8 27H28L16 4Z" fill="url(#footerBrandGrad)" />
+                  <path d="M10.5 22H21.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                  <circle cx="16" cy="9.8" r="2.1" fill="#60a5fa" />
                   <defs>
-                    <linearGradient id="footerBrandGrad" x1="7" y1="6" x2="25" y2="24" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="footerBrandGrad" x1="4" y1="4" x2="28" y2="27" gradientUnits="userSpaceOnUse">
                       <stop stopColor="#60a5fa" />
-                      <stop offset="0.5" stopColor="#3b82f6" />
+                      <stop offset="0.4" stopColor="#3b82f6" />
                       <stop offset="1" stopColor="#6366f1" />
                     </linearGradient>
                   </defs>
                 </svg>
               </div>
-              <span className="font-heading font-extrabold text-gray-900 dark:text-white text-[19px] tracking-tight">
+              <span className="font-heading font-extrabold text-gray-900 dark:text-white text-[19.5px] tracking-tight">
                 Acdy<span className="text-blue-600 dark:text-blue-400">On</span>
               </span>
             </a>

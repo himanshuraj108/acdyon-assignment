@@ -1,17 +1,17 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Dark Badge Container -->
-  <rect width="64" height="64" rx="18" fill="#090d1a"/>
-  <rect x="0.5" y="0.5" width="63" height="63" rx="17.5" stroke="#1e293b"/>
+  <!-- Rounded Dark Badge -->
+  <rect width="64" height="64" rx="16" fill="#090d1a"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="#1e293b" stroke-width="1.5"/>
   
-  <!-- AcdyOn Brand Delta Glyph -->
-  <path d="M32 12L14 48H23L32 29L41 48H50L32 12Z" fill="url(#favBrandGrad)"/>
-  <path d="M24 41H40" stroke="#ffffff" stroke-width="4.4" stroke-linecap="round"/>
-  <circle cx="32" cy="21" r="3" fill="#60a5fa"/>
+  <!-- Prominent, Bold AcdyOn Delta Mark -->
+  <path d="M32 8L8 54H20.5L32 31.5L43.5 54H56L32 8Z" fill="url(#favBoldGrad)"/>
+  <path d="M21 44H43" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="32" cy="19.5" r="4.2" fill="#60a5fa"/>
   
   <defs>
-    <linearGradient id="favBrandGrad" x1="14" y1="12" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+    <linearGradient id="favBoldGrad" x1="8" y1="8" x2="56" y2="54" gradientUnits="userSpaceOnUse">
       <stop stop-color="#60a5fa"/>
-      <stop offset="0.5" stop-color="#3b82f6"/>
+      <stop offset="0.4" stop-color="#3b82f6"/>
       <stop offset="1" stop-color="#6366f1"/>
     </linearGradient>
   </defs>

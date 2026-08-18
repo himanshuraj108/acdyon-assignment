@@ -76,15 +76,15 @@ function DashboardMockup() {
         {/* Left Sidebar */}
         <div className="hidden sm:block bg-gray-50/70 dark:bg-gray-900/60 border-r border-gray-200/80 dark:border-gray-800 p-2.5">
           <div className="flex items-center gap-1.5 mb-3.5">
-            <div className="w-5 h-5 rounded-md bg-[#090d1a] border border-gray-800/80 flex items-center justify-center flex-shrink-0">
-              <svg width="11" height="11" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 6L7 24H11.5L16 14.5L20.5 24H25L16 6Z" fill="url(#heroBrandGrad)" />
-                <path d="M12 20.5H20" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
-                <circle cx="16" cy="10.5" r="1.5" fill="#60a5fa" />
+            <div className="w-5 h-5 rounded-md bg-[#090d1a] border border-gray-800 flex items-center justify-center flex-shrink-0">
+              <svg width="13" height="13" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4L4 27H10.2L16 15.5L21.8 27H28L16 4Z" fill="url(#heroBrandGrad)" />
+                <path d="M10.5 22H21.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                <circle cx="16" cy="9.8" r="2.1" fill="#60a5fa" />
                 <defs>
-                  <linearGradient id="heroBrandGrad" x1="7" y1="6" x2="25" y2="24" gradientUnits="userSpaceOnUse">
+                  <linearGradient id="heroBrandGrad" x1="4" y1="4" x2="28" y2="27" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#60a5fa" />
-                    <stop offset="0.5" stopColor="#3b82f6" />
+                    <stop offset="0.4" stopColor="#3b82f6" />
                     <stop offset="1" stopColor="#6366f1" />
                   </linearGradient>
                 </defs>
