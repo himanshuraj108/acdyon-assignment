@@ -9,7 +9,7 @@
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #ffffff;
@@ -39,21 +39,21 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #6366f1 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 55%, #7c3aed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-mesh {
-    background-image: radial-gradient(at 15% 25%, rgba(99, 102, 241, 0.07) 0px, transparent 55%),
-      radial-gradient(at 85% 75%, rgba(124, 58, 237, 0.06) 0px, transparent 55%);
+    background-image: radial-gradient(at 15% 25%, rgba(37, 99, 235, 0.06) 0px, transparent 55%),
+      radial-gradient(at 85% 75%, rgba(79, 70, 229, 0.05) 0px, transparent 55%);
   }
 
   html.dark .bg-mesh,
   .dark .bg-mesh {
-    background-image: radial-gradient(at 15% 25%, rgba(99, 102, 241, 0.12) 0px, transparent 55%),
-      radial-gradient(at 85% 75%, rgba(124, 58, 237, 0.08) 0px, transparent 55%);
+    background-image: radial-gradient(at 15% 25%, rgba(37, 99, 235, 0.12) 0px, transparent 55%),
+      radial-gradient(at 85% 75%, rgba(79, 70, 229, 0.08) 0px, transparent 55%);
   }
 
   .section-divider {
@@ -66,13 +66,19 @@
   }
 }
 
-html.theme-transitioning,
-html.theme-transitioning *,
-html.theme-transitioning *::before,
-html.theme-transitioning *::after {
-  transition-property: background-color, color, border-color, box-shadow, fill, stroke, opacity !important;
-  transition-duration: 380ms !important;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+/* View Transition circular aperture ripple */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+  mix-blend-mode: normal !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1 !important;
+}
+
+::view-transition-new(root) {
+  z-index: 99999 !important;
 }
 
 @keyframes typingBounce {
