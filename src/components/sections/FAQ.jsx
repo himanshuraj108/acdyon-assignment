@@ -56,17 +56,17 @@ function FAQItem({ faq, isOpen, onToggle, index }) {
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-5 sm:p-6 text-left transition-colors cursor-pointer group"
+        className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left transition-colors cursor-pointer group"
       >
-        <span className="font-heading font-semibold text-[16px] sm:text-[17px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4">
+        <span className="font-heading font-semibold text-[15px] sm:text-[16.5px] text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-3 sm:pr-4">
           {faq.question}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/60 group-hover:text-blue-600 transition-colors"
+          className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/60 group-hover:text-blue-600 transition-colors"
         >
-          <ChevronDown size={17} />
+          <ChevronDown size={16} />
         </motion.div>
       </button>
 
@@ -78,7 +78,7 @@ function FAQItem({ faq, isOpen, onToggle, index }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="px-5 sm:px-6 pb-6 pt-1 text-[14.5px] text-gray-600 dark:text-gray-300 leading-relaxed border-t border-gray-100 dark:border-gray-800/80">
+            <div className="px-4 sm:px-5 md:px-6 pb-5 sm:pb-6 pt-1 text-[13.5px] sm:text-[14.5px] text-gray-600 dark:text-gray-300 leading-relaxed border-t border-gray-100 dark:border-gray-800/80 font-normal">
               {faq.answer}
             </div>
           </motion.div>
@@ -96,18 +96,18 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-gray-50/50 dark:bg-gray-950 section-divider" id="faq">
-      <div className="max-w-4xl mx-auto px-5 sm:px-8">
-        <div className="text-center mb-14">
+    <section className="py-20 sm:py-24 lg:py-32 bg-gray-50/50 dark:bg-gray-950 section-divider font-outfit" id="faq">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-14">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/70 dark:border-blue-900 text-blue-700 dark:text-blue-400 text-[12.5px] font-semibold tracking-wider uppercase mb-4 font-outfit"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/70 dark:border-blue-900 text-blue-700 dark:text-blue-400 text-[11.5px] sm:text-[12.5px] font-semibold tracking-wider uppercase mb-3 sm:mb-4"
           >
             <HelpCircle size={13} className="text-blue-600" />
-            Common Questions
+            <span>Common Questions</span>
           </motion.div>
 
           <motion.h2
@@ -115,7 +115,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.06 }}
-            className="font-heading font-black text-[36px] sm:text-[44px] text-gray-900 dark:text-white leading-tight mb-4 tracking-tight"
+            className="font-heading font-semibold text-[30px] sm:text-[36px] lg:text-[42px] text-gray-900 dark:text-white leading-tight mb-3 sm:mb-4 tracking-tight"
           >
             Frequently Asked Questions
           </motion.h2>
@@ -125,7 +125,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[16px] text-gray-500 dark:text-gray-400 max-w-xl mx-auto leading-relaxed"
+            className="text-[14.5px] sm:text-[16px] text-gray-500 dark:text-gray-400 max-w-xl mx-auto leading-relaxed font-normal"
           >
             Everything you need to know about academic pathways and honorary recognition before beginning your journey.
           </motion.p>
