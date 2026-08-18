@@ -1,6 +1,6 @@
 import { motion, useInView, useAnimation } from 'framer-motion'
 import { useRef, useEffect } from 'react'
-import { Check, ChevronRight, Lock, Play, MessageSquare, BarChart3, BookOpen } from 'lucide-react'
+import { Check, ChevronRight, Lock, MessageSquare, BarChart3, BookOpen } from 'lucide-react'
 
 const sidebarItems = ['Dashboard', 'My Courses', 'Mentors', 'Projects', 'Analytics', 'Settings']
 
@@ -24,7 +24,7 @@ function ModuleRow({ mod }) {
     <div
       className={`flex items-center justify-between py-2.5 px-3 rounded-xl text-[11px] ${
         mod.current
-          ? 'bg-brand-50 dark:bg-brand-950/50 border border-brand-100 dark:border-brand-900/60'
+          ? 'bg-blue-50 dark:bg-brand-950/50 border border-blue-100 dark:border-brand-900/60'
           : mod.locked
           ? 'opacity-40'
           : ''
@@ -36,7 +36,7 @@ function ModuleRow({ mod }) {
             mod.done
               ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400'
               : mod.current
-              ? 'bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400'
+              ? 'bg-blue-100 dark:bg-brand-900/40 text-blue-600 dark:text-brand-400'
               : 'bg-gray-100 dark:bg-gray-700 text-gray-300 dark:text-gray-600'
           }`}
         >
@@ -47,7 +47,7 @@ function ModuleRow({ mod }) {
         <span
           className={`font-medium ${
             mod.current
-              ? 'text-brand-700 dark:text-brand-300'
+              ? 'text-blue-700 dark:text-brand-300'
               : mod.done
               ? 'text-gray-600 dark:text-gray-400'
               : 'text-gray-400 dark:text-gray-600'
@@ -57,7 +57,7 @@ function ModuleRow({ mod }) {
         </span>
       </div>
       {mod.current && (
-        <span className="text-[9px] font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/60 px-1.5 py-0.5 rounded-full border border-brand-100 dark:border-brand-900">
+        <span className="text-[9px] font-semibold text-blue-600 dark:text-brand-400 bg-blue-50 dark:bg-brand-950/60 px-1.5 py-0.5 rounded-full border border-blue-100 dark:border-brand-900">
           In Progress
         </span>
       )}
@@ -80,7 +80,7 @@ function ChatMessage({ msg, index }) {
       <div
         className={`max-w-[85%] px-3 py-2 rounded-2xl text-[11px] leading-relaxed ${
           msg.from === 'ai'
-            ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-900 dark:text-brand-300 rounded-tl-sm'
+            ? 'bg-blue-50 dark:bg-brand-950/50 text-blue-900 dark:text-brand-300 rounded-tl-sm'
             : 'bg-gray-900 dark:bg-gray-700 text-white rounded-tr-sm'
         }`}
       >
@@ -105,7 +105,7 @@ export default function DashboardPreview() {
   }, [isInView, barControls])
 
   return (
-    <section className="py-24 lg:py-32 bg-white dark:bg-gray-950 section-divider" id="platform-preview">
+    <section className="py-24 lg:py-32 bg-white dark:bg-gray-950 section-divider font-outfit" id="platform-preview">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
           <div>
@@ -114,7 +114,7 @@ export default function DashboardPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-[13px] font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-3"
+              className="text-[13px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3"
             >
               The Platform
             </motion.p>
@@ -123,18 +123,18 @@ export default function DashboardPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: 0.06 }}
-              className="font-heading font-black text-[38px] sm:text-[44px] text-gray-900 dark:text-white leading-tight mb-5"
+              className="font-heading font-semibold text-[38px] sm:text-[44px] text-gray-900 dark:text-white leading-tight mb-5 tracking-tight"
             >
               A learning environment
               <br />built for{' '}
-              <span className="text-gradient">deep focus.</span>
+              <span className="text-gradient font-semibold">deep focus.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.12 }}
-              className="text-[16px] text-gray-500 dark:text-gray-400 leading-relaxed mb-8"
+              className="text-[16px] text-gray-500 dark:text-gray-400 leading-relaxed mb-8 font-normal"
             >
               No distractions. No bloated course catalogues. AcdyOn surfaces exactly
               what you need next, gives you an AI mentor who knows where you are,
@@ -154,8 +154,8 @@ export default function DashboardPreview() {
                 { icon: BookOpen, label: 'Curriculum that adjusts based on what you actually understand' },
               ].map(({ icon: Icon, label }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center flex-shrink-0">
-                    <Icon size={15} className="text-brand-600 dark:text-brand-400" />
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center flex-shrink-0">
+                    <Icon size={15} className="text-blue-600 dark:text-blue-400" />
                   </div>
                   <span className="text-[14.5px] text-gray-600 dark:text-gray-400 font-medium">{label}</span>
                 </div>
@@ -171,11 +171,11 @@ export default function DashboardPreview() {
             transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden shadow-mockup border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900 select-none">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80 dark:border-gray-800 bg-white dark:bg-gray-900 select-none">
               <div className="flex items-center gap-3 px-4 py-3 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400" />
                   <div className="w-3 h-3 rounded-full bg-emerald-400" />
                 </div>
                 <div className="flex-1">
@@ -189,20 +189,20 @@ export default function DashboardPreview() {
               <div className="grid" style={{ gridTemplateColumns: '130px 1fr 180px' }}>
                 <div className="bg-gray-50/80 dark:bg-gray-800/60 border-r border-gray-200 dark:border-gray-700 p-3.5">
                   <div className="flex items-center gap-1.5 mb-5">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-brand-600 to-violet-700 flex items-center justify-center">
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                         <path d="M2.5 9.5L6 2.5L9.5 9.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M3.8 7.2H8.2" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </div>
-                    <span className="text-[12px] font-bold text-gray-800 dark:text-gray-200">Acdyon</span>
+                    <span className="text-[12px] font-semibold text-gray-800 dark:text-gray-200">AcdyOn</span>
                   </div>
                   {sidebarItems.map((item, i) => (
                     <div
                       key={item}
                       className={`px-2.5 py-2 rounded-lg text-[11px] mb-0.5 cursor-pointer transition-colors ${
                         i === 1
-                          ? 'bg-brand-50 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 font-semibold'
+                          ? 'bg-blue-50 dark:bg-brand-950/60 text-blue-700 dark:text-brand-300 font-semibold'
                           : 'text-gray-500 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                       }`}
                     >
@@ -212,15 +212,15 @@ export default function DashboardPreview() {
                 </div>
 
                 <div className="p-4">
-                  <div className="text-[12px] font-bold text-gray-800 dark:text-gray-200 mb-0.5">ML Engineering</div>
+                  <div className="text-[12px] font-semibold text-gray-800 dark:text-gray-200 mb-0.5">ML Engineering</div>
                   <div className="text-[10px] text-gray-500 dark:text-gray-500 mb-3">6 modules · 48 lessons · 3 projects</div>
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-[10px] text-gray-500 dark:text-gray-500">Overall Progress</span>
-                    <span className="text-[10px] font-bold text-brand-600 dark:text-brand-400">72%</span>
+                    <span className="text-[10px] font-semibold text-blue-600 dark:text-brand-400">72%</span>
                   </div>
                   <div className="h-1.5 bg-gray-100 dark:bg-gray-700 rounded-full mb-4 overflow-hidden">
                     <motion.div
-                      className="h-full rounded-full bg-gradient-to-r from-brand-500 to-violet-500"
+                      className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600"
                       initial={{ width: '0%' }}
                       animate={barControls}
                     />
@@ -248,17 +248,17 @@ export default function DashboardPreview() {
                       transition={{ delay: 0.9 }}
                       className="flex justify-start"
                     >
-                      <div className="bg-brand-50 dark:bg-brand-950/50 rounded-2xl rounded-tl-sm px-3 py-2 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-1 inline-block" />
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-2 inline-block" />
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-400 typing-dot-3 inline-block" />
+                      <div className="bg-blue-50 dark:bg-brand-950/50 rounded-2xl rounded-tl-sm px-3 py-2 flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 typing-dot-1 inline-block" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 typing-dot-2 inline-block" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 typing-dot-3 inline-block" />
                       </div>
                     </motion.div>
                   </div>
                   <div className="px-3 py-2.5 border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center gap-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-3 py-2">
                       <span className="text-[10px] text-gray-400 dark:text-gray-500 flex-1">Ask your mentor...</span>
-                      <div className="w-5 h-5 rounded-lg bg-brand-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-5 h-5 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
                         <ChevronRight size={10} className="text-white" />
                       </div>
                     </div>
@@ -269,7 +269,7 @@ export default function DashboardPreview() {
 
             <div
               className="absolute -bottom-5 -left-5 -z-10 w-full h-full rounded-2xl"
-              style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(124,58,237,0.04))' }}
+              style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.06), rgba(79,70,229,0.04))' }}
             />
           </motion.div>
         </div>

@@ -79,12 +79,12 @@ function DashboardMockup() {
                 <path d="M3.2 6H6.8" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
               </svg>
             </div>
-            <span className="text-[11px] font-bold text-gray-800 dark:text-gray-200">AcdyOn</span>
+            <span className="text-[11px] font-bold text-gray-800 dark:text-gray-200 font-outfit">AcdyOn</span>
           </div>
           {['Dashboard', 'My Courses', 'Mentors', 'Projects', 'Community'].map((item, i) => (
             <div
               key={item}
-              className={`px-2 py-1.5 rounded-lg text-[10px] mb-0.5 cursor-pointer transition-colors ${
+              className={`px-2 py-1.5 rounded-lg text-[10px] mb-0.5 cursor-pointer transition-colors font-outfit ${
                 i === 1
                   ? 'bg-blue-50 dark:bg-brand-950/70 text-blue-700 dark:text-brand-300 font-semibold'
                   : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
@@ -95,7 +95,7 @@ function DashboardMockup() {
           ))}
         </div>
 
-        <div className="p-4 overflow-hidden bg-white dark:bg-gray-900">
+        <div className="p-4 overflow-hidden bg-white dark:bg-gray-900 font-outfit">
           <div className="flex items-center justify-between mb-1">
             <div>
               <div className="text-[11px] font-bold text-gray-900 dark:text-gray-100">ML Engineering Track</div>
@@ -133,7 +133,7 @@ function DashboardMockup() {
           </div>
         </div>
 
-        <div className="border-l border-gray-200/80 dark:border-gray-800 p-3 flex flex-col gap-2 bg-gray-50/50 dark:bg-gray-900/50">
+        <div className="border-l border-gray-200/80 dark:border-gray-800 p-3 flex flex-col gap-2 bg-gray-50/50 dark:bg-gray-900/50 font-outfit">
           <div className="flex items-center gap-1.5 mb-1">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse-dot" />
             <span className="text-[10px] font-semibold text-gray-700 dark:text-gray-300">AI Mentor</span>
@@ -178,32 +178,34 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
           <div>
             <motion.div {...fadeUp(0)}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/70 dark:border-blue-900 text-blue-700 dark:text-blue-400 text-[13px] font-semibold tracking-wide uppercase mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/70 dark:border-blue-900 text-blue-700 dark:text-blue-400 text-[13px] font-semibold tracking-wide uppercase mb-6 font-outfit">
                 <Sparkles size={13} className="text-blue-600" />
                 AI-Powered Learning Ecosystem
               </div>
             </motion.div>
 
+            {/* Main Headline in Poppins (not bold) */}
             <motion.h1
               {...fadeUp(0.08)}
-              className="font-heading text-[46px] sm:text-[54px] lg:text-[58px] xl:text-[64px] font-black leading-[1.06] tracking-tight text-gray-900 dark:text-white mb-6"
+              className="font-poppins font-normal text-[46px] sm:text-[54px] lg:text-[58px] xl:text-[64px] leading-[1.12] tracking-tight text-gray-900 dark:text-white mb-6"
             >
               The Platform for{' '}
-              <span className="text-gradient">Extraordinary</span>
+              <span className="text-gradient font-medium">Extraordinary</span>
               <br />
               Careers.
             </motion.h1>
 
+            {/* Subtext in Poppins (not bold) */}
             <motion.p
               {...fadeUp(0.16)}
-              className="text-[17px] leading-[1.7] text-gray-600 dark:text-gray-300 max-w-[520px] mb-9"
+              className="font-poppins font-normal text-[16.5px] leading-[1.75] text-gray-600 dark:text-gray-300 max-w-[520px] mb-9"
             >
               AcdyOn blends AI-personalized curriculum with practitioner-led
               mentorship — helping ambitious learners and professionals build practical
               capabilities and strategic judgment for real-world impact.
             </motion.p>
 
-            <motion.div {...fadeUp(0.22)} className="flex flex-wrap items-center gap-3">
+            <motion.div {...fadeUp(0.22)} className="flex flex-wrap items-center gap-3 font-outfit">
               <a
                 href="#cta"
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 dark:hover:bg-brand-700 rounded-full transition-all duration-200 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5"
@@ -222,7 +224,7 @@ export default function Hero() {
 
             <motion.p
               {...fadeUp(0.28)}
-              className="mt-8 text-[13px] text-gray-500 dark:text-gray-400 font-medium"
+              className="mt-8 text-[13.5px] text-gray-500 dark:text-gray-400 font-poppins font-normal"
             >
               Tailored for ambitious students, career-switchers, and working professionals.
             </motion.p>

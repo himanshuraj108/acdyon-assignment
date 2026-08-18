@@ -8,8 +8,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
         heading: ['Outfit', 'system-ui', 'sans-serif'],
-        body: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        body: ['Outfit', 'system-ui', 'sans-serif'],
+        outfit: ['Outfit', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         brand: {
