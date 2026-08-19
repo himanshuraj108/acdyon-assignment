@@ -10,7 +10,7 @@ export function ThemeProvider({ children }) {
       if (stored === 'dark') return true
       if (stored === 'light') return false
     } catch {}
-    return false
+    return true
   })
 
   // Synchronize on mount
