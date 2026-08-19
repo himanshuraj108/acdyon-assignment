@@ -246,14 +246,14 @@ export default function Hero() {
             <motion.div {...fadeUp(0.22)} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-outfit">
               <a
                 href="#cta"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 dark:hover:bg-brand-700 rounded-full transition-all duration-200 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 text-center"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 dark:hover:bg-brand-700 rounded-full transition-all duration-200 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 text-center whitespace-nowrap flex-shrink-0"
               >
                 <span>Book Consultation</span>
                 <ArrowRight size={16} />
               </a>
               <a
                 href="#platform-preview"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[15px] font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-200 text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[15px] font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-200 text-center whitespace-nowrap flex-shrink-0"
               >
                 <Play size={14} className="text-gray-500 dark:text-gray-400" />
                 <span>Explore Platform</span>

@@ -254,10 +254,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[72px]">
             <Logo />
 
-            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
+            <nav className="hidden xl:flex items-center gap-1 xl:gap-1.5">
               <a
                 href="#"
-                className="px-3 py-2 text-[14px] xl:text-[14.5px] font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+                className="px-3 py-2 text-[14.5px] font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors whitespace-nowrap"
               >
                 Home
               </a>
@@ -563,23 +563,23 @@ export default function Navbar() {
               </a>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-3">
               <ThemeToggle />
               <a
                 href="#"
-                className="px-4 py-2 text-[14.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors"
+                className="px-4 py-2 text-[14.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white transition-colors whitespace-nowrap"
               >
                 Sign in
               </a>
               <a
                 href="#cta"
-                className="px-5 py-2.5 text-[14px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 dark:hover:bg-brand-700 rounded-full transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/30"
+                className="px-5 py-2.5 text-[14px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 dark:hover:bg-brand-700 rounded-full transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/30 whitespace-nowrap flex-shrink-0"
               >
                 Book Consultation &rarr;
               </a>
             </div>
 
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex xl:hidden items-center gap-2">
               <ThemeToggle />
               <button
                 onClick={() => setMenuOpen((v) => !v)}
@@ -602,7 +602,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm xl:hidden"
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
@@ -610,7 +610,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="fixed top-[72px] left-0 right-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-2xl lg:hidden max-h-[85vh] overflow-y-auto"
+              className="fixed top-[72px] left-0 right-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-2xl xl:hidden max-h-[85vh] overflow-y-auto"
             >
               <div className="max-w-4xl mx-auto px-5 sm:px-8 py-6 space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
