@@ -254,10 +254,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[72px]">
             <Logo />
 
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
               <a
                 href="#"
-                className="px-3 py-2 text-[14.5px] font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+                className="px-3 py-2 text-[14px] xl:text-[14.5px] font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
               >
                 Home
               </a>
@@ -563,7 +563,7 @@ export default function Navbar() {
               </a>
             </nav>
 
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <ThemeToggle />
               <a
                 href="#"
@@ -579,7 +579,7 @@ export default function Navbar() {
               </a>
             </div>
 
-            <div className="flex md:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-2">
               <ThemeToggle />
               <button
                 onClick={() => setMenuOpen((v) => !v)}
@@ -593,7 +593,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile & Tablet Drawer */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -602,7 +602,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
@@ -610,94 +610,129 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="fixed top-[72px] left-0 right-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-xl md:hidden max-h-[85vh] overflow-y-auto"
+              className="fixed top-[72px] left-0 right-0 z-50 bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 shadow-2xl lg:hidden max-h-[85vh] overflow-y-auto"
             >
-              <div className="px-5 py-5 space-y-1">
-                <a
-                  href="#"
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-2.5 text-[15px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
-                >
-                  Home
-                </a>
-
-                {/* Mobile Programs List */}
-                <div className="py-2">
-                  <div className="px-4 py-1 text-[12px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                    Programs
-                  </div>
-                  {programItems.map((item) => (
+              <div className="max-w-4xl mx-auto px-5 sm:px-8 py-6 space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Left Column in Tablet */}
+                  <div className="space-y-3">
                     <a
-                      key={item.title}
-                      href={item.href}
+                      href="#"
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-2 text-[14px] font-medium text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      className="block px-4 py-2.5 text-[15px] font-semibold text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
                     >
-                      {item.title}
+                      Home
                     </a>
-                  ))}
+
+                    {/* Programs Section */}
+                    <div className="bg-gray-50/70 dark:bg-gray-900/60 rounded-2xl p-3 border border-gray-100 dark:border-gray-800">
+                      <div className="px-2 py-1 text-[11.5px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-wider font-heading">
+                        Programs
+                      </div>
+                      <div className="space-y-1 mt-1">
+                        {programItems.map((item) => (
+                          <a
+                            key={item.title}
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block px-2.5 py-1.5 rounded-lg text-[13.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                          >
+                            {item.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Doctoral Section */}
+                    <div className="bg-gray-50/70 dark:bg-gray-900/60 rounded-2xl p-3 border border-gray-100 dark:border-gray-800">
+                      <div className="px-2 py-1 text-[11.5px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-wider font-heading">
+                        Doctoral & Pathways
+                      </div>
+                      <div className="space-y-1 mt-1">
+                        {doctoralCategories.slice(0, 4).map((cat) => (
+                          <a
+                            key={cat.id}
+                            href="#programs"
+                            onClick={() => setMenuOpen(false)}
+                            className="block px-2.5 py-1.5 rounded-lg text-[13.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                          >
+                            {cat.name}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column in Tablet */}
+                  <div className="space-y-3">
+                    {/* Universities Section */}
+                    <div className="bg-gray-50/70 dark:bg-gray-900/60 rounded-2xl p-3 border border-gray-100 dark:border-gray-800">
+                      <div className="px-2 py-1 text-[11.5px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-wider font-heading">
+                        Universities
+                      </div>
+                      <div className="space-y-1 mt-1">
+                        {universityItems.map((item) => (
+                          <a
+                            key={item.title}
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block px-2.5 py-1.5 rounded-lg text-[13.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                          >
+                            {item.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Resources Section */}
+                    <div className="bg-gray-50/70 dark:bg-gray-900/60 rounded-2xl p-3 border border-gray-100 dark:border-gray-800">
+                      <div className="px-2 py-1 text-[11.5px] font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-wider font-heading">
+                        Resources
+                      </div>
+                      <div className="space-y-1 mt-1">
+                        {resourceItems.map((item) => (
+                          <a
+                            key={item.title}
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block px-2.5 py-1.5 rounded-lg text-[13.5px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                          >
+                            {item.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <a
+                        href="#faq"
+                        onClick={() => setMenuOpen(false)}
+                        className="flex-1 block px-4 py-2.5 text-[14px] font-medium text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
+                      >
+                        FAQ
+                      </a>
+                      <a
+                        href="#mentors"
+                        onClick={() => setMenuOpen(false)}
+                        className="flex-1 block px-4 py-2.5 text-[14px] font-medium text-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
+                      >
+                        About
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Mobile Universities List */}
-                <div className="py-2">
-                  <div className="px-4 py-1 text-[12px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                    Universities
-                  </div>
-                  {universityItems.map((item) => (
-                    <a
-                      key={item.title}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-2 text-[14px] font-medium text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  ))}
-                </div>
-
-                {/* Mobile Resources List */}
-                <div className="py-2">
-                  <div className="px-4 py-1 text-[12px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
-                    Resources
-                  </div>
-                  {resourceItems.map((item) => (
-                    <a
-                      key={item.title}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-2 text-[14px] font-medium text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {item.title}
-                    </a>
-                  ))}
-                </div>
-
-                <a
-                  href="#faq"
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-2.5 text-[15px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
-                >
-                  FAQ
-                </a>
-                <a
-                  href="#mentors"
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-2.5 text-[15px] font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors"
-                >
-                  About
-                </a>
-
-                <div className="pt-3 mt-3 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-2">
+                <div className="pt-4 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row gap-3">
                   <a
                     href="#"
-                    className="block px-4 py-3 text-[15px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white rounded-xl transition-colors"
+                    className="flex-1 block px-4 py-3 text-[14.5px] font-medium text-gray-700 dark:text-gray-300 text-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-colors"
                   >
                     Sign in
                   </a>
                   <a
                     href="#cta"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-3 text-[15px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 rounded-full text-center transition-colors shadow-md"
+                    className="flex-1 block px-6 py-3 text-[14.5px] font-semibold text-white bg-blue-600 hover:bg-blue-700 dark:bg-brand-600 rounded-full text-center transition-colors shadow-md shadow-blue-500/20"
                   >
                     Book Consultation &rarr;
                   </a>

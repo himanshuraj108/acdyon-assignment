@@ -190,10 +190,18 @@ export default function DashboardPreview() {
               <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] md:grid-cols-[120px_1fr_160px]">
                 <div className="hidden sm:block bg-gray-50/80 dark:bg-gray-800/60 border-r border-gray-200 dark:border-gray-700 p-3">
                   <div className="flex items-center gap-1.5 mb-4">
-                    <div className="w-5 h-5 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center flex-shrink-0">
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                        <path d="M2 8L5 2L8 8" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M3.2 6H6.8" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
+                    <div className="w-5 h-5 rounded-md bg-[#090d1a] border border-gray-800 flex items-center justify-center flex-shrink-0">
+                      <svg width="13" height="13" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4L4 27H10.2L16 15.5L21.8 27H28L16 4Z" fill="url(#prevBrandGrad)" />
+                        <path d="M10.5 22H21.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                        <circle cx="16" cy="9.8" r="2.1" fill="#60a5fa" />
+                        <defs>
+                          <linearGradient id="prevBrandGrad" x1="4" y1="4" x2="28" y2="27" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#60a5fa" />
+                            <stop offset="0.4" stopColor="#3b82f6" />
+                            <stop offset="1" stopColor="#6366f1" />
+                          </linearGradient>
+                        </defs>
                       </svg>
                     </div>
                     <span className="text-[11.5px] font-semibold text-gray-800 dark:text-gray-200">AcdyOn</span>
